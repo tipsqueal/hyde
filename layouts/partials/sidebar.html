@@ -14,6 +14,16 @@
       {{end}}
     </ul>
 
+    <ul class="sidebar-nav">
+      {{ with .Site.Params.twitter }}
+        <li>Twitter: <a href="https://twitter.com/{{.}}">@{{.}}</a></li>
+      {{end}}
+
+      {{ with .Site.Params.github }}
+        <li>Github: <a href="https://github.com/{{.}}">{{.}}</a></li>
+      {{end}}
+    </ul>
+
     <p>{{ with .Site.Params.copyright }}{{.}}{{ else }}&copy; {{.Now.Format "2006"}}. All rights reserved. {{end}}</p>
   </div>
 </div>
