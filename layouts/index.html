@@ -5,7 +5,7 @@
 
 <div class="content container">
   <div class="posts">
-    {{ range where .Data.Pages "Section" "post" }}
+    {{ range (.Paginate (where .Data.Pages "Section" "post" )).Pages }}
       <div class="post">
         <h1 class="post-title">
           <a href="{{ .Permalink }}">{{ .Title }}</a>
@@ -19,6 +19,8 @@
       </div>
     {{ end }}
   </div>
+
+  {{ partial "pagination.html" . }}
 </div>
 
   </body>
